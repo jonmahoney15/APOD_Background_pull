@@ -8,6 +8,10 @@ Currently this is setup for debian distro with gnome but the ImageGrabber should
 
 Add to crontab like so:
 
-0 0 * * * ~/{Path to script}/setAPODWallpaper.sh
+
+15 0 * * * /home/{path to script}/APOD_Background_pull/setAPODWallpaper.sh >> /var/log/APODOutput.log 2>&1
+
 
 This will then add the new image every night at midnight.
+
+This gives a nice daily image to learn about space as your desktop background.
