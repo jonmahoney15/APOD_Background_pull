@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "request": "^2.88.2",
+    "wallpaper": "^6.1.1"
+  }
+}
