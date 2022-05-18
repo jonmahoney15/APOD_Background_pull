@@ -35,3 +35,5 @@ fi
 node /home/jon/dev/APOD_Background_pull/ImageGrabber.js
 
 gsettings set org.gnome.desktop.background picture-uri file:////home/jon/dev/APOD_Background_pull/images/$(date +%Y-%m-%d).jpg
+
+return 0
