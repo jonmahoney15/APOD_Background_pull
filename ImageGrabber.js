@@ -2,7 +2,8 @@ const axios = require('axios');
 const path = require('path');
 const fs = require('fs');
 const request = require('request');
-require('dotenv').config();
+
+require('dotenv').config({path: __dirname+'/.env'});
 
 try {
     fs.mkdirSync(path.join(__dirname, 'images'));
@@ -12,12 +13,10 @@ try {
     }
 }
 
-let imageName = '';
-
 axios.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.NASA_API_KEY}`)
     .then(response => {    
         console.log(response.data)
-        imageName = response.data.date;
+
         request(response.data.hdurl).pipe(fs.createWriteStream(path.join(__dirname, 'images', response.data.date + '.jpg')))
         .on('finish', () => {console.log(
             'Image saved successfully'
